@@ -6,15 +6,15 @@
 A simple VueJS package to extend vue-router with a back button.
 
 ## Why? I could just add "history.back()"
-Sure thing, but the in browser history does not account for programatic navigation. This is where vue-router-back-button comes in. This package does not just sends you to the previous route. Instead it tracks your navigation and sends you back to where you came from.
+Sure thing, but the in browser history does not account for programmatic navigation. This is where vue-router-back-button comes in. This package does not just send you to the previous route. Instead it tracks your navigation and sends you back to where you came from.
 
 ### Regular
 Overview page > show page > edit page
-After save, a programatic navigation to show page > go back will take you to **edit page**
+After save, a programmatic navigation to show page > go back will take you to **edit page**
 
 ### Vue-router-back-button
 Overview page > show page > edit page
-After save, a programatic navigation to show page > go back will take you to **overview page** as intented
+After save, a programmatic navigation to show page > go back will take you to **overview page** as intended
 
 ## Dependencies
 - vue >2.3.3
