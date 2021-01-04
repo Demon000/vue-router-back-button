@@ -42,10 +42,17 @@ const History = {
     /**
      * Install global property $routerHistory
      */
-    install (Vue, { ignoreRoutesWithSameName } = {}) {
+    install (appOrVue, { ignoreRoutesWithSameName } = {}) {
         History.ignoreRoutesWithSameName = ignoreRoutesWithSameName || false
 
-        Object.defineProperty(Vue.prototype, '$routerHistory', {
+        let propertyTarget = null;
+        if (appOrVue.config && appOrVue.config.globalProperties) {
+            propertyTarget = appOrVue.config.globalProperties;
+        } else if (appOrVue.prototype) {
+            propertyTarget = appOrVue;
+        }
+
+        Object.defineProperty(propertyTarget, '$routerHistory', {
             get () { return History }
         })
     },

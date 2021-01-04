@@ -7,13 +7,13 @@ export {
 }
 
 export default {
-    install (Vue, { router, ignoreRoutesWithSameName } = {}) {
+    install (appOrVue, { router, ignoreRoutesWithSameName } = {}) {
         if (!router) {
             console.error('VueRouterBackButton: router is required on install')
             return
         }
 
-        Vue.use(routerHistory, { ignoreRoutesWithSameName })
+        appOrVue.use(routerHistory, { ignoreRoutesWithSameName })
         router.afterEach(writeHistory)
     },
 }
